@@ -91,9 +91,7 @@ async def generate(
     if stop_sequence is not None and stop_sequence in text:
         text = text.split(stop_sequence)[0] + stop_sequence
 
-    response = {}
-    response["model"] = "GPT-J-6B"
-    response["compute_time"] = time.time() - start
+    response = {"model": "GPT-J-6B", "compute_time": time.time() - start}
     response["text"] = text
     response["prompt"] = context
     response["token_max_length"] = token_max_length
